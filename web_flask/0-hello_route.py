@@ -8,6 +8,7 @@ app.run(host='0.0.0.0')
 
 
 @app.route('/', strict_slashes=False)
-def hello_world():
+def hello_hbnb():
+        """Print hello hbnb"""
         print("Hello HBNB!")
         return "Hello HBNB!"
