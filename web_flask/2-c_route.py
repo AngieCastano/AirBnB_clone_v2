@@ -18,6 +18,7 @@ def hbnb():
         return "HBNB"
 
 
+@app.route('/c/<username>', strict_slashes=False)
 def c_is_fun(text):
             """Show c and text"""
             return '%s' % escape(text)
