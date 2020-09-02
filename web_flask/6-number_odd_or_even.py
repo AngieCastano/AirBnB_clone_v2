@@ -47,6 +47,8 @@ def n_is_integer_template(n):
 def n_is_integer_template_flow_control(n):
         """displays html template if n is an integer"""
         return render_template('6-number_odd_or_even.html', n=n)
+
+
 if __name__ == '__main__':
         ''' when not imported'''
         app.run(host='0.0.0.0', port=5000)
