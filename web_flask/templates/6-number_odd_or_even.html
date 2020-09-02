@@ -4,9 +4,9 @@
     <TITLE>HBNB</TITLE>
   </HEAD>
   <BODY>
-    {% if even(n) %}
+    {% if n is even %}
     <H1>Number: {{ n }} is even</H1>
-    {% elif odd(n) %}
+    {% elif n is odd %}
     <H1>Number: {{ n }} is odd</H1>
     {% endif %}
   </BODY>
