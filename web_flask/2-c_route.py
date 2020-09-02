@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This displays “Hello HBNB!”"""
-from flask import Flask
+from flask import Flask, escape
 
 
 app = Flask(__name__)
@@ -18,10 +18,10 @@ def hbnb():
         return "HBNB"
 
 
-@app.route('/c/<username>', strict_slashes=False)
+@app.route('/c/<text>', strict_slashes=False)
 def c_is_fun(text):
             """Show c and text"""
-            return '%s' % escape(text)
+            return 'C %s' % escape(text)
 
 
 if __name__ == '__main__':
