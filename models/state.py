@@ -12,16 +12,14 @@ class State(BaseModel, Base):
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
 
-    if getenv('HBNB_TYPE_STORAGE') != 'db':
-        @property
-        def cities(self):
-            """ getter method for cities"""
-            from models import storage
-            cities_list = []
-            dictionary = storage.all(City)
-            if dictionary:
-                for k, v in dictionary.items():
-                    if self.id == v.state_id:
-                        cities_list.append(v)
-            return cities_list
-
+    @property
+    def cities(self):
+        """ getter method for cities"""
+        from models import storage
+        cities_list = []
+        dictionary = storage.all(City)
+        if dictionary:
+            for k, v in dictionary.items():
+                if self.id == v.state_id:
+                    cities_list.append(v)
+        return cities_list
